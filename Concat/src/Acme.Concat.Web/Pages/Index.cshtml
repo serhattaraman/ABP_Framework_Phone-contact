@@ -1,0 +1,136 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Acme.Concat.Localization
+@using Volo.Abp.Users
+@model Acme.Concat.Web.Pages.IndexModel
+@inject IHtmlLocalizer<ConcatResource> L
+@inject ICurrentUser CurrentUser
+@section styles {
+<abp-style src="/Pages/Index.css" />
+}
+@section scripts {
+<abp-script src="/Pages/Index.js" />
+}
+<div class="container">
+    
+    <div class="p-5 text-center">
+        
+        <div class="d-inline-block bg-success text-white p-1 h5 rounded mb-4 " role="alert" active="background-color:whitesmoke">
+            <h5 class="m-1"> <i class="fas fa-rocket"></i> Congratulations, <strong>Concat</strong> is successfully running!</h5>
+        </div>
+
+        <h1>Welcome to the Application</h1>
+
+        <p class="lead px-lg-5 mx-lg-5">@L["LongWelcomeMessage"]</p>
+
+        @if (!CurrentUser.IsAuthenticated)
+        {
+            <a abp-button="Primary" href="~/Account/Login"><i class="fa fa-sign-in"></i> @L["Login"]</a>
+        }
+
+    </div>
+    <div class="card">
+        <div class="card-body">
+            Serhat Taraman
+        </div>
+        <div class="card-">
+            <div class="col-md-auto text-center">
+                <img src="https://abp.io/assets/png/mastering-abp-framework.webp" style="max-width:300px;" class="m-100 mb-4 my-md-3"/>
+            </div>
+            <div class="col-md-auto align-items-center"></div>
+        </div>
+    </div>
+    <br/>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-auto text-center">
+                    <img src="https://abp.io/assets/png/mastering-abp-framework.webp" style="max-width: 400px;" class="w-100 mb-5 my-md-3">
+                </div>
+                <div class="col-md d-flex align-items-center">
+                    <div class="pe-0 pe-md-4">
+                        <small class="text-uppercase text-muted">THE OFFICIAL GUIDE</small>
+                        <h2 class="mb-4">Mastering ABP Framework</h2>
+                        <p class="mb-4">Written by the creator of the ABP Framework, this book will help you gain a complete understanding of the framework and modern web application development techniques.</p>
+                        <div class="mb-4">
+                            <a href="https://www.amazon.com/gp/product/B097Z2DM8Q/ref=dbs_a_def_rwt_hsch_vapi_tkin_p1_i0" class="btn btn-success mb-1">
+                                Buy on Amazon US
+                            </a>
+                            <a href="https://www.packtpub.com/product/mastering-abp-framework/9781801079242" class="btn btn-primary mb-1">
+                                Buy on PACKT
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card mt-4 mb-5">
+        <div class="card-body">
+            <p class="px-lg-5 mx-lg-5 py-3 text-center">
+                <a href="https://commercial.abp.io/" target="_blank">ABP Commercial</a> is a platform based on the open source ABP framework. It provides pre-built application modules,
+                rapid application development tooling, professional UI themes, premium support and more.
+            </p>
+
+            <div class="row text-center justify-content-md-center">
+                <div class="col-lg-2">
+                    <div class="p-3">
+                        <h6>
+                            <i class="fas fa-plus d-block mb-3 fa- 2x text-secondary"></i> Startup Templates
+                            <a href="https://commercial.abp.io/startup-templates?ref=tmpl" target="_blank" class="d-block mt-2 btn btn-sm btn-link">Details <i class="fas fa-chevron-right"></i></a>
+                        </h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 border-start">
+                    <div class="p-3">
+                        <h6>
+                            <i class="fas fa-plus d-block mb-3 fa- 2x text-secondary"></i> Application Modules
+                            <a href="https://commercial.abp.io/modules?ref=tmpl" target="_blank" class="d-block mt-2 btn btn-sm btn-link">Details <i class="fas fa-chevron-right"></i></a>
+                        </h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 border-start">
+                    <div class="p-3">
+                        <h6>
+                            <i class="fas fa-plus d-block mb-3 fa- 2x text-secondary"></i> Developer<br/>Tools
+                            <a href="https://commercial.abp.io/tools?ref=tmpl" target="_blank" class="d-block mt-2 btn btn-sm btn-link">Details <i class="fas fa-chevron-right"></i></a>
+                        </h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 border-start">
+                    <div class="p-3">
+                        <h6>
+                            <i class="fas fa-plus d-block mb-3 fa- 2x text-secondary"></i> UI<br/> Themes
+                            <a href="https://commercial.abp.io/themes?ref=tmpl" target="_blank" class="d-block mt-2 btn btn-sm btn-link">Details <i class="fas fa-chevron-right"></i></a>
+                        </h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 border-start">
+                    <div class="p-3">
+                        <h6>
+                            <i class="fas fa-plus d-block mb-3 fa- 2x text-secondary"></i> Premium Support
+                            <a href="https://support.abp.io/QA/Questions?ref=tmpl" target="_blank" class="d-block mt-2 btn btn-sm btn-link">Details <i class="fas fa-chevron-right"></i></a>
+                        </h6>
+                    </div>
+                </div>
+                <div class="col-lg-2 border-start">
+                    <div class="p-3">
+                        <h6>
+                            <i class="fas fa-plus d-block mb-3 fa- 2x text-secondary"></i> Additional Services
+                            <a href="https://commercial.abp.io/additional-services?ref=tmpl" target="_blank" class="d-block mt-2 btn btn-sm btn-link">Details <i class="fas fa-chevron-right"></i></a>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-5 text-center">
+        <p class="align-middle">
+            <a href="https://twitter.com/abpframework" target="_blank" class="mx-2"><i class="fa fa-twitter"></i><span class="text-secondary"> Abp Framework</span></a>
+            <a href="https://twitter.com/abpcommercial" target="_blank" class="mx-2"><i class="fa fa-twitter"></i><span class="text-secondary"> Abp Commercial</span></a>
+            <a href="https://github.com/abpframework/abp" target="_blank" class="mx-2"><i class="fa fa-github"></i><span class="text-secondary"> abpframework</span></a>
+        </p>
+    </div>
+</div>

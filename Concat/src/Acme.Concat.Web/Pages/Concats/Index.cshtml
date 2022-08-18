@@ -11,7 +11,7 @@
 {
     <abp-script src="/Pages/Concats/Index.js" />
 }
-<abp-card>
+<abp-card background="Warning">
     <abp-card-header>
         <abp-row>
             <abp-column size-md="_6">
@@ -23,13 +23,15 @@
                     <abp-button id="NewEmployerButton"
                                 text="@L["NewEmploye"].Value"
                                 icon="user-plus"
-                                button-type="Primary"/>
+                                button-type="Outline_Light"/>
                 }
             </abp-column>
         </abp-row>
     </abp-card-header>
 
-    <abp-card-body>
-        <abp-table striped-rows="true" id="ConcatsTable"></abp-table>
+    <abp-card-body> 
+        <table class="table table-striped table-light text-warning" id="ConcatsTable"></table>
     </abp-card-body>
 </abp-card>
+<br/>
+<p class="text-center">Employe Contact © 2022</p>
